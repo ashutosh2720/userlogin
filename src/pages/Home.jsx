@@ -2,16 +2,13 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-    const navigate = useNavigate()
-    useEffect(() => {
-        const token = localStorage.getItem("userDetails");
-        if (token) {
-          
-        }
-        else{
-navigate('/')
-        }
-      }, []);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem("userDetails");
+    if (!token) {
+      navigate("/");
+    }
+  }, []);
   return (
     <div>
       <p className="mt-12 mb-12 text-3xl text-center text-black">
@@ -30,7 +27,6 @@ navigate('/')
           quam quos consectetur. A libero quisquam fugit perferendis. Dolorum
           doloribus optio dolores cupiditate facilis.
         </article>
-              
       </section>
     </div>
   );
