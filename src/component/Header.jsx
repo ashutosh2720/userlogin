@@ -6,7 +6,7 @@ const Header = () => {
     const navigate = useNavigate()
     function logoutHandler(){
         localStorage.removeItem('userDetails')
-navigate('/login')
+navigate('/')
     }
 
     useEffect(()=>{

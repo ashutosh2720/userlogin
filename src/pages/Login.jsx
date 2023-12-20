@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     if (loginFormData.username && loginFormData.password) {
       localStorage.setItem("userDetails", JSON.stringify(loginFormData));
-      navigate("/");
+      navigate("/home");
     } else {
       alert("please enter the both fields");
     }
@@ -27,7 +27,7 @@ const Login = () => {
   useEffect(() => {
     const token = localStorage.getItem("userDetails");
     if (token) {
-      navigate("/");
+      navigate("/home");
     }
   }, []);
 
